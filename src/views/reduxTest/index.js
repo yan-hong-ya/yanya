@@ -30,7 +30,7 @@ const mapDispatchToProps =dispatch =>{
   render(){
     return(
       <div>
-       
+
         <button onClick={this.props.reduceCount}>-</button>
         <button onClick={this.props.addCount}>+</button>
         <p>

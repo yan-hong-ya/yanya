@@ -4,6 +4,7 @@ import Toast from './toast'
 import API from '../../config/api'
 // import Drag from './drag'
 import './index.less'
+// import Charts from './echarts'
 
 class Test extends React.Component {
     constructor() {
@@ -82,6 +83,7 @@ class Test extends React.Component {
                     <Toast jobNumber={this.state.jobNumber} ></Toast>
                 </Modal>
                 <button onClick={this.handleTrees}>看请求的数据</button>
+                {/* <Charts></Charts> */}
             </div>
         )
     }

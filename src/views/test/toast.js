@@ -10,10 +10,10 @@ class Toast extends React.Component {
             jobNumber2: ''
         }
     }
-    jobNumber2
+
 
     componentDidMount=() => {
-        Drag.init("ant-modal-content").DragStart()
+        Drag.init('ant-modal-content').DragStart()
         console.log(this.props.jobNumber)
         this.setState({
             jobNumber2: this.props.jobNumber
@@ -28,6 +28,7 @@ class Toast extends React.Component {
         // })
         this.jobNumber2 = nextProps.jobNumber
     }
+    jobNumber2
 
     handleNumber2 = (e) => {
         console.log(e.target.value)

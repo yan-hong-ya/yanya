@@ -1,2 +1,2 @@
-export const AddCount="addCount"
-export const ReduceCount="reduceCount"
+export const AddCount='addCount'
+export const ReduceCount='reduceCount'

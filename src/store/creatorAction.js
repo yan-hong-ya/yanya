@@ -9,7 +9,7 @@ export const addCountAction = (value) => {
 
 export const reduceCountAction = (value) => {
   return {
-    type: ReduceCount,  
+    type: ReduceCount,
     value
   }
 }
