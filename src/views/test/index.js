@@ -4,15 +4,16 @@ import Toast from './toast'
 import API from '../../config/api'
 // import Drag from './drag'
 import './index.less'
-// import Charts from './echarts'
+import Charts from './echarts'
+import Rotate from '../../js/rotate'
 
 class Test extends React.Component {
     constructor() {
         super()
         this.state = {
             jobNumber: '',
-            visible: false
-
+            visible: false,
+            visibleRotate:false
         }
     }
 
@@ -48,12 +49,39 @@ class Test extends React.Component {
         });
     };
 
+    handleOkRotate = e => {
+        console.log(e);
+        this.setState({
+            visibleRotate: false
+        });
+    };
+
+    handleCancelRotate = e => {
+        console.log(e);
+        this.setState({
+            visibleRotate: false
+        });
+    };
+
     handleTrees = () => {
         API.getTrees().then((res) => {
             console.log(res.data)
         }).catch((err) => {
             console.log(err)
         })
+    }
+
+    handleRotate=()=>{
+        this.setState({
+            visibleRotate:true
+        })
+
+        setTimeout(()=>{
+            Rotate.init('rotateImg').DragStart()
+        },1000)
+
+
+
     }
 
 
@@ -83,7 +111,25 @@ class Test extends React.Component {
                     <Toast jobNumber={this.state.jobNumber} ></Toast>
                 </Modal>
                 <button onClick={this.handleTrees}>看请求的数据</button>
-                {/* <Charts></Charts> */}
+                <Charts></Charts>
+
+                <button onClick={this.handleRotate}>图片旋转</button>
+
+                <Modal
+                    closable={false}
+                    destroyOnClose
+                    footer={null}
+                    onCancel={this.handleCancelRotate}
+                    onOk={this.handleOkRotate}
+                    visible={this.state.visibleRotate}
+                >
+                    <div id="rotateImg"
+                        style={{background:'url('+require('../../img/111.jpeg')+')',width:480,backgroundSize:'cover',height:600}}
+                    >
+
+                    </div>
+
+                </Modal>
             </div>
         )
     }
