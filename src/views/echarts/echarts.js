@@ -185,7 +185,7 @@ class EchartsTest extends React.Component {
 
 
         // 点击图标变灰事件
-        // Object.getOwnPropertyNames() 返回一个数组，该数组对元素是 obj自身拥有的枚举或不可枚举属性名称字符串。 
+        // Object.getOwnPropertyNames() 返回一个数组，该数组对元素是 obj自身拥有的枚举或不可枚举属性名称字符串。
         // 数组中枚举属性的顺序与通过 for...in 循环（或 Object.keys）迭代该对象属性时一致。数组中不可枚举属性的顺序未定义。
         let series = option['series']
         myChart.on('legendselectchanged', function (obj) {

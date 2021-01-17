@@ -2,6 +2,7 @@ import React from 'react'
 import Test from '../views/test/index'
 import Reduxtest from '../views/reduxTest/index'
 import Charts from '../views/echarts/echarts'
+import Pdf from '../views/pdf/index'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import { Menu } from 'antd';
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
@@ -65,6 +66,9 @@ class Routers extends React.Component {
                         <li>
                             <Link to="/charts">charts</Link>
                         </li>
+                        <li>
+                            <Link to="/pdf">pdf</Link>
+                        </li>
                     </ul>
                     <hr />
 
@@ -79,6 +83,9 @@ class Routers extends React.Component {
                         </Route>
                         <Route path="/charts">
                             <Charts />
+                        </Route>
+                        <Route path="/pdf">
+                            <Pdf />
                         </Route>
                     </Switch>
 
